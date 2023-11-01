@@ -1,15 +1,12 @@
 <main class="main">
   <div class="inner">
     <%# ログインしているときは以下を表示する %>
+    <% if current_user %>
       <div class="greeting">
-        <% if current_user %>
          <a>こんにちは</a>
          <%= link_to current_user.name + "さん", user_path(current_user), class: :greeting__link %> 
-        <% else %>
-         <%= link_to "ログイン", new_user_session_path, class: :greeting__link%>
-          
-        <% end %>
       </div> 
+        <% end %> 
     <%# // ログインしているときは上記を表示する %>
     <div class="card__wrapper">
       <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>

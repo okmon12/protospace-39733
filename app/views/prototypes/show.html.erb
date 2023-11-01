@@ -10,9 +10,9 @@
           <%= link_to "編集する", edit_prototype_path(@prototype), class: "prototype__btn" %>
           <%= link_to "削除する", prototype_path(@prototype.id), data: { turbo_method: :delete }, class: "prototype__btn" %>
         </div>
-        <%= link_to "by " + @prototype.user.name, user_path(@prototype.user), class: "prototype__user" %> 
-      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
       <% end %>
+      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
+      <%= link_to "by " + @prototype.user.name, user_path(@prototype.user), class: "prototype__user" %>
       <div class="prototype__image">
         <% if @prototype.image.attached? %>
           <%= image_tag @prototype.image %>
